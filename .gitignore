@@ -1,0 +1,17 @@
+Hide API keys and secrets!
+
+.env
+
+Hide the massive virtual environment folder
+
+venv/
+env/
+
+Hide the heavy PDF medical textbooks
+
+data/
+
+Hide Python cache files
+
+pycache/
+*.pyc
