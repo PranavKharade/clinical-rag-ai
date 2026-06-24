@@ -3,5 +3,6 @@ llama-index
 llama-index-vector-stores-qdrant
 llama-index-llms-groq
 llama-index-embeddings-fastembed
+fastembed
 qdrant-client
 python-dotenv
