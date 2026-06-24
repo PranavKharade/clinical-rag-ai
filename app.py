@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 from llama_index.core import Settings, VectorStoreIndex
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.embeddings.fastembed import FastEmbedEmbedding
 from llama_index.llms.groq import Groq
 from qdrant_client import QdrantClient
 from llama_index.vector_stores.qdrant import QdrantVectorStore
@@ -17,8 +17,8 @@ st.set_page_config(page_title="Medical AI Assistant", page_icon="🩺", layout="
 # We use @st.cache_resource so the app doesn't reconnect to the database every time you type a letter
 @st.cache_resource
 def initialize_rag():
-    # 1. Math Translator (Embedding Model)
-    Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
+    # 1. Math Translator (Lightweight FastEmbed Model)
+    Settings.embed_model = FastEmbedEmbedding(model_name="BAAI/bge-base-en-v1.5")
     
     # 2. The Brain (Groq Llama 3.3)
     # We use st.secrets here for when we deploy to the cloud!

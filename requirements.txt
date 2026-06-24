@@ -1,9 +1,7 @@
---extra-index-url https://download.pytorch.org/whl/cpu
 streamlit
 llama-index
 llama-index-vector-stores-qdrant
 llama-index-llms-groq
-llama-index-embeddings-huggingface
+llama-index-embeddings-fastembed
 qdrant-client
 python-dotenv
-torch
