@@ -20,10 +20,10 @@ def initialize_rag():
     # 1. Math Translator (Lightweight FastEmbed Model)
     Settings.embed_model = FastEmbedEmbedding(model_name="BAAI/bge-base-en-v1.5")
     
-    # 2. The Brain (Groq Llama 3.3)
+    # 2. The Brain (Groq Qwen 3.6 - Updated to replace deprecated Llama 3.3)
     # We use st.secrets here for when we deploy to the cloud!
     groq_key = os.environ.get("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
-    Settings.llm = Groq(model="llama-3.3-70b-versatile", api_key=groq_key)
+    Settings.llm = Groq(model="qwen-3.6-27b", api_key=groq_key)
     
     # 3. The Database Connection (Qdrant)
     qdrant_url = os.environ.get("QDRANT_URL") or st.secrets.get("QDRANT_URL")
